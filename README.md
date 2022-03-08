@@ -1,1 +1,2 @@
 DesignPattens
+- Strategy Patern Branch
