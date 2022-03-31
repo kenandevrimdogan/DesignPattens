@@ -31,7 +31,7 @@ namespace WebApp.Strategy.Repositories
 
         public async Task<Product> GetById(string productId)
         {
-            return await _productsCollection.Find(x => x.UserId == productId).FirstOrDefaultAsync();
+            return await _productsCollection.Find(x => x.Id == productId).FirstOrDefaultAsync();
         }
 
         public async Task<Product> Save(Product product)
