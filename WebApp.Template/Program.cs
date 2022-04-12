@@ -1,4 +1,4 @@
-using BasePoject.Models;
+﻿using BasePoject.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +34,9 @@ namespace BasePoject
                     userManager.CreateAsync(new AppUser
                     {
                         UserName = $"user{i}",
-                        Email = $"user{i}@outlook.com"
+                        Email = $"user{i}@outlook.com",
+                        PictureUrl = "/userpictures/primeuserpicture.png",
+                        Description = $"{i} -  Açıklama"
                     }, "Password123*").Wait();
                 }
             }
