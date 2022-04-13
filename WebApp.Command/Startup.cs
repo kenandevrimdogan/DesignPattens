@@ -1,4 +1,6 @@
 using BasePoject.Models;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -25,6 +27,8 @@ namespace BasePoject
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SqlServer"));
             });
+
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
