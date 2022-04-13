@@ -68,7 +68,7 @@ namespace WebApp.Command.Commands
                         new ObjectSettings() {
                             PagesCount = true,
                             HtmlContent = stringBuilder.ToString(),
-                            WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet= Path.Combine(Directory.GetCurrentDirectory(), "wwroot/lib/bootstrap/dist/css/bootstrap.min.css") },
+                            WebSettings = { DefaultEncoding = "utf-8", UserStyleSheet= Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/css/Bootstrap/bootstrap.min.css") },
                             HeaderSettings = { FontSize = 9, Right = "Page [page] of [toPage]", Line = true, Spacing = 2.812 }
                         }
                     }

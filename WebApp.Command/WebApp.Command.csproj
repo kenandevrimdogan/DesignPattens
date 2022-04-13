@@ -7,6 +7,9 @@
   <ItemGroup>
     <None Include="WebApp.Template.csproj" />
     <None Include="WebApp.Template.csproj.user" />
+	  <EmbeddedResource Include="libwkhtmltox.dll">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +23,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\Bootstrap\" />
   </ItemGroup>
 
 </Project>
