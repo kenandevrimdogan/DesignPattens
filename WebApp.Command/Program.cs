@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApp.Command.Models;
 
 namespace BasePoject
 {
@@ -37,6 +38,18 @@ namespace BasePoject
                         Email = $"user{i}@outlook.com"
                     }, "Password123*").Wait();
                 }
+
+                for (int i = 1; i <= 30; i++)
+                {
+                    identityDbContext.Products.AddAsync(new Product
+                    {
+                        Name = $"Kalem {1}",
+                        Price = i * 100,
+                        Stock = i * 50
+                    });
+                }
+
+                identityDbContext.SaveChangesAsync().Wait();
             }
 
             host.Run();

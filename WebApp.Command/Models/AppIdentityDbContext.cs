@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WebApp.Command.Models;
 
 namespace BasePoject.Models
 {
@@ -10,5 +11,7 @@ namespace BasePoject.Models
         {
 
         }
+
+        public virtual DbSet<Product> Products { get; set; }
     }
 }
