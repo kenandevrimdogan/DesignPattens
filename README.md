@@ -7,7 +7,7 @@ Behavioral Design Pattern (Algoritmalar ve nesneler arasındaki sorumlulukların
 DesignPattens (Tr)
 - Strategy Pattern (WebApp.Strategy Project) => Çalışma zamanında veritabanını tipini değiştirebilme yetisi ve daha farklı veritabanlarıyla çalışabilme yetisi kazandırır.
 - Template Pattern (WebApp.Template Project) => Kullanıcı profil kartını gösterirken algoritmanın soyutlama ve kapsülleme ile iskeletini oluşturmasını ve genişlemesini sağlar.
-- Command Pattern (WebApp.Command Project) => Kullanıcı profil kartını gösterirken algoritmanın soyutlama ve kapsülleme ile iskeletini oluşturmasını ve genişlemesini sağlar.
+- Command Pattern (WebApp.Command Project) =>
 
 -------------------------------------------------------------
 
