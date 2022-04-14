@@ -17,7 +17,10 @@ namespace WebApp.Observer.Observer
         public void CreateUsered(AppUser appUser)
         {
             var logger = _serviceProvider.GetRequiredService<ILogger<UserObserverCreateDiscount>>();
-            var appDbContext = _serviceProvider.GetRequiredService<AppIdentityDbContext>();
+
+            using var scope = _serviceProvider.CreateScope();
+
+            var appDbContext = scope.ServiceProvider.GetRequiredService<AppIdentityDbContext>();
 
             appDbContext.Discounts.Add(new Discount
             {
