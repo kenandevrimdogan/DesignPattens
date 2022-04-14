@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApp.Observer.Observer;
 
 namespace WebApp.Observer
 {
@@ -21,6 +22,16 @@ namespace WebApp.Observer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<UserObserverSubject>(sp =>
+            {
+                UserObserverSubject userObserverSubject = new();
+                userObserverSubject.RegisterObserver(new UserOberverWriteToConsole(sp));
+                userObserverSubject.RegisterObserver(new UserObserverCreateDiscount(sp));
+                userObserverSubject.RegisterObserver(new UserObserverSendEmail(sp));
+
+                return userObserverSubject;
+            });
+
             services.AddDbContext<AppIdentityDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("SqlServer"));

@@ -16,7 +16,7 @@ namespace WebApp.Observer.Observer
             _serviceProvider = serviceProvider;
         }
 
-        public void CreateUser(AppUser appUser)
+        public void CreateUsered(AppUser appUser)
         {
             var logger = _serviceProvider.GetRequiredService<ILogger<UserObserverCreateDiscount>>();
 
