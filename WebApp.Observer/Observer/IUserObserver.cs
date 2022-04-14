@@ -1,4 +1,5 @@
-﻿using BasePoject.Models;
+﻿
+using WebApp.Observer.Models;
 
 namespace WebApp.Observer.Observer
 {

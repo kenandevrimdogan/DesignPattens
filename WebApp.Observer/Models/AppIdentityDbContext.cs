@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebApp.Observer.Models;
 
-namespace BasePoject.Models
+namespace WebApp.Observer.Models
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser>
     {

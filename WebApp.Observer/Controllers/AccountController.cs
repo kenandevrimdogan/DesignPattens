@@ -1,7 +1,8 @@
-﻿using BasePoject.Models;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Threading.Tasks;
+using WebApp.Observer.Models;
 
 namespace BasePoject.Controllers
 {
@@ -48,6 +49,36 @@ namespace BasePoject.Controllers
             await _signInManager.SignOutAsync();
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SignUp(UserCreateViewModel request)
+        {
+            var appUser = new AppUser
+            {
+                UserName = request.UserName,
+                Email = request.Email,  
+            };
+
+            var identityResult = await _userManager.CreateAsync(appUser, request.Password);
+
+            if (identityResult.Succeeded)
+            {
+                // subject
+
+                ViewBag.message = "Üyelik işlemi başarıyla gerçekleşti";
+            }
+            else
+            {
+                ViewBag.message = identityResult.Errors.FirstOrDefault().Description;
+            }
+
+            return View();
         }
     }
 }

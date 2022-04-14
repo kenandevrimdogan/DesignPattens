@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace BasePoject.Models
+namespace WebApp.Observer.Models
 {
     public class AppUser: IdentityUser
     {

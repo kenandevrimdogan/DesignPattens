@@ -37,6 +37,12 @@
                                 <a asp-controller="Account" asp-action="Login" class="nav-link text-dark">Giriş</a>
                             }
                         </li>
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a asp-controller="Account" asp-action="SignUp" class="nav-link text-dark">Kayıt Ol</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

@@ -1,9 +1,9 @@
-﻿using BasePoject.Models;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Net;
 using System.Net.Mail;
+using WebApp.Observer.Models;
 
 namespace WebApp.Observer.Observer
 {

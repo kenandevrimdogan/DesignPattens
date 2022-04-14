@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "SignUp";
+}
+@model UserCreateViewModel;
+<h1>SignUp</h1>
+<h1>@ViewBag.message</h1>
+
+
+<form asp-controller="account" asp-action="SignUp" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">UserName address</label>
+        <input asp-for="UserName" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">UserName address</label>
+        <input asp-for="Email" type="email" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1" value="Password123*">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+</form>
