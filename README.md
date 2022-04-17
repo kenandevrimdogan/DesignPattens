@@ -1,10 +1,12 @@
 **Creational Design Patterns**: Nesne yaratma mekanizmasıyla ilgilenen, uygulamamızda duruma uygun şekilde nesne yaratmaya çalışan tasarım kalıplarıdır.
+
 **Behavioral Patterns**: Nesnelerin birbirleri ile ilişkisini düzenleyen desendir.
 - **Strategy Pattern**: Bir işi yapabilecek birden fazla algoritma yapısı kurmayı sağlar. Böylece var olan sınıfımız üzerinde değişiklik yapmadan sistemimizi geliştirmeyi sağlar.
 - **Template Pattern**: Şablon bir algoritmamızın soyut(abstract) bir sınıfa implemente edilip, sorumlulukların alt sınıflara dağıtılması işlemidir.
 - **Command Pattern**: Algoritma listesini tutarak, sıra ile algoritmaları çalıştırmayı sağlar.
 - **Observer Pattern**: Tasarlanmış olan sistem içerisinde, değişimi takip etmeyi ve takip sonrası işlemleri gerçekleştirmeyi sağlar.
 - **Chain Of Responsibility Pattern**: Bir birini takip eden algoritmaları handler ederek sırayla gerçekleştirir.
+
 **Structural Design Patterns**: Yapının esnekliği ve verimliliğini bozmadan nesneler ve sınıfların daha büyük yapılar oluşturmak için nasıl bir araya getirilmesini sağlar.
 
 Bilinmesi Gerekenler:
