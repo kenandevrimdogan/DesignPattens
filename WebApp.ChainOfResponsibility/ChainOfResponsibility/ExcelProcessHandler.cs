@@ -21,7 +21,7 @@ namespace WebApp.ChainOfResponsibility.ChainOfResponsibility
             var list = o as List<T>;
 
             list.ForEach(t => { 
-                var values = type.GetProperties().Select(propertyInfo => propertyInfo.GetValue(t, null)).ToList();
+                var values = typeof(T).GetProperties().Select(propertyInfo => propertyInfo.GetValue(t, null)).ToArray();
 
                 table.Rows.Add(values);
             });
@@ -29,12 +29,12 @@ namespace WebApp.ChainOfResponsibility.ChainOfResponsibility
             return table;
         }
 
-        public override object Handle(object processHandler)
+        public override object Handle(object o)
         {
             var wb = new XLWorkbook();
             var ds = new DataSet();
 
-            ds.Tables.Add(getTable(processHandler));
+            ds.Tables.Add(getTable(o));
 
             wb.Worksheets.Add(ds);
 

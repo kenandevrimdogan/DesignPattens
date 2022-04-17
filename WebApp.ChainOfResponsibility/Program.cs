@@ -43,11 +43,13 @@ namespace BasePoject
                 {
                     identityDbContext.Products.Add(new Product
                     {
-                       Name = $"Kalem {i}",
-                       Price = i * 100,
-                       Stock = i * 15
+                        Name = $"Kalem {i}",
+                        Price = i * 100,
+                        Stock = i * 15
                     });
                 }
+
+                identityDbContext.SaveChanges();
             }
 
             host.Run();
