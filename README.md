@@ -22,7 +22,7 @@ Bilinmesi Gerekenler:
 
 - **Immobility**: Geliştirilen modüllerin tekrar kullanıma uygun olmaması.
 - **Fragility**: Yapılacak olan bir değişikliğin, başka kısımları etkilemesi.
-- **Extendability: Esneklik.
+- **Extendability**: Esneklik.
 
 - **AbstractClass**: Şablon algoritmanın tanımlanacağı soyut sınıf.
 - **ConcreteClass**: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
