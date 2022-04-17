@@ -37,7 +37,7 @@ DesignPattens Projeleri
 
 ---------------------------------------------------------
 
--- Kaynaklar
+- Kaynaklar
 - https://github.com/Fcakiroglu16
 - https://www.gokhan-gokalp.com/
 - https://www.argenova.com.tr/
