@@ -3,18 +3,10 @@ Behavioral Design Pattern (Algoritmalar ve nesneler arasındaki sorumlulukların
 - Strategy Pattern: 
 - Template Pattern:  
 - Command Pattern:
+- Observer Pattern:
 
 DesignPattens (Tr)
 - Strategy Pattern (WebApp.Strategy Project) => 
 - Template Pattern (WebApp.Template Project) => 
 - Command Pattern (WebApp.Command Project) =>
-
--------------------------------------------------------------
-
-DesignPattens (En)
-- Strategy Pattern (WebApp.Strategy Project) => 
-- Template Pattern (WebApp.Template Project) => 
-- Command Pattern (WebApp.Command Project) => 
-
-
-
+- Observer Pattern (WebApp.Observer Project) =>
