@@ -12,16 +12,14 @@ Bilinmesi Gerekenler:
 
 - Inversion of control: Ioc ile Uygulama içerisindeki obje instance’larının yönetimi sağlanarak, bağımlılıklarını en aza indirgemek amaçlanmaktadır.
 
-Immobility: Geliştirilen modüllerin tekrar kullanıma uygun olmaması.
-Fragility: Yapılacak olan bir değişikliğin, başka kısımları etkilemesi.
-Extendability: Esneklik.
+- Immobility: Geliştirilen modüllerin tekrar kullanıma uygun olmaması.
+- Fragility: Yapılacak olan bir değişikliğin, başka kısımları etkilemesi.
+- Extendability: Esneklik.
 
-AbstractClass: Şablon algoritmanın tanımlanacağı soyut sınıf.
-ConcreteClass: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
+- AbstractClass: Şablon algoritmanın tanımlanacağı soyut sınıf.
+- ConcreteClass: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
 
-- Behavioral Patterns
-Bkz: https://refactoring.guru/design-patterns/behavioral-patterns)
-
+Behavioral Patterns
 - Strategy Pattern: Bir işi yapabilecek birden fazla algoritma yapısı kurmayı sağlar. Böylece var olan sınıfımız üzerinde değişiklik yapmadan sistemimizi geliştirmeyi sağlar. (Open-Closed)
 - Template Pattern: Şablon bir algoritmamızın soyut(abstract) bir sınıfa implemente edilip, sorumlulukların alt sınıflara dağıtılması işlemidir.
 - Command Pattern: Algoritma listesini tutarak, sıra ile algoritmaları çalıştırmayı sağlar.
