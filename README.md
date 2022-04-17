@@ -7,8 +7,8 @@ Bkz: https://refactoring.guru/design-patterns/behavioral-patterns)
 - Chain Of Responsibility Pattern
 
 DesignPattens (Tr)
-- Strategy Pattern (WebApp.Strategy Project)
-- Template Pattern (WebApp.Template Project)
-- Command Pattern (WebApp.Command Project)
-- Observer Pattern (WebApp.Observer Project)
-- Chain Of Responsibility Pattern (WebApp.ChainOfResponsibility Project)
+- Strategy Pattern (WebApp.Strategy)
+- Template Pattern (WebApp.Template)
+- Command Pattern (WebApp.Command)
+- Observer Pattern (WebApp.Observer)
+- Chain Of Responsibility Pattern (WebApp.ChainOfResponsibility)
