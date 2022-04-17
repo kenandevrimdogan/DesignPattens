@@ -10,7 +10,7 @@ Bkz: https://refactoring.guru/design-patterns/behavioral-patterns)
 - Template Pattern: Şablon bir algoritmamızın soyut(abstract) bir sınıfa implemente edilip, sorumlulukların alt sınıflara dağıtılması işlemidir.
 - Command Pattern: Algoritma listesini tutarak, sıra ile algoritmaları çalıştırmayı sağlar.
 - Observer Pattern: Tasarlanmış olan sistem içerisinde, değişimi takip etmeyi ve takip sonrası işlemleri gerçekleştirmeyi sağlar.
-- Chain Of Responsibility Pattern: Bir birini takip eden algoritmaları handler ederek sırayla gerçekleştirir.
+- Chain Of Responsibility Pattern: Bir birini takip eden algoritmaları handler ederek sırayla gerçekleşmesini sağlar.
 
 DesignPattens Projeleri
 - Strategy Pattern (WebApp.Strategy): Giriş yapan üyenin çalışma esnasında(runtime) CRUD işlemlerin gerçekleştiği Database seçme ve güncellemesini sağlar.
