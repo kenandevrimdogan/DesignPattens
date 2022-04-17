@@ -1,8 +1,8 @@
 Behavioral Patterns(Davranışsal Tasarım Kalıbı): Nesnelerin birbirleri ile ilişkisini düzenleyen desendir.
 
 Bilinmesi Gerekenler:
-AbstractClass: Şablon algoritmanın tanımlanacağı soyut sınıf.
-ConcreteClass: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
+- AbstractClass: Şablon algoritmanın tanımlanacağı soyut sınıf.
+- ConcreteClass: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
 
 Bkz: https://refactoring.guru/design-patterns/behavioral-patterns)
 
