@@ -1,5 +1,9 @@
 Behavioral Patterns(Davranışsal Tasarım Kalıbı): Nesnelerin birbirleri ile ilişkisini düzenleyen desendir.
 
+Bilinmesi Gerekenler:
+AbstractClass: Şablon algoritmanın tanımlanacağı soyut sınıf.
+ConcreteClass: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
+
 Bkz: https://refactoring.guru/design-patterns/behavioral-patterns)
 
 - Strategy Pattern: Bir işi yapabilecek birden fazla algoritma yapısı kurmayı sağlar. Böylece var olan sınıfımız üzerinde değişiklik yapmadan sistemimizi geliştirmeyi sağlar. (Open-Closed)
@@ -16,7 +20,7 @@ DesignPattens Projeleri
 - Chain Of Responsibility Pattern (WebApp.ChainOfResponsibility): Önce excel dosyası haline getirilen ürünler ardından zip yapılıp, e-posta olarak gönderilir.
 
 
--- Kaynak
-https://github.com/Fcakiroglu16
-https://www.gokhan-gokalp.com/
-https://www.argenova.com.tr/
+-- Kaynaklar
+- https://github.com/Fcakiroglu16
+- https://www.gokhan-gokalp.com/
+- https://www.argenova.com.tr/
