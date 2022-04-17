@@ -20,7 +20,7 @@ DesignPattens Projeleri
 - Chain Of Responsibility Pattern (WebApp.ChainOfResponsibility): Önce excel dosyası haline getirilen ürünler ardından zip yapılıp, e-posta olarak gönderilir.
 
 
--- Kaynaklar
+Kaynaklar
 - https://github.com/Fcakiroglu16
 - https://www.gokhan-gokalp.com/
 - https://www.argenova.com.tr/
