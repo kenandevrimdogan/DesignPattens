@@ -9,7 +9,7 @@
 
 **Structural Design Patterns**: Yapının esnekliği ve verimliliğini bozmadan nesneler ve sınıfların daha büyük yapılar oluşturmak için nasıl bir araya getirilmesini sağlar.
 
-Bilinmesi Gerekenler:
+**Bilinmesi Gerekenler**:
 - **Single Responsibility**: Tek sorumluluğa sahip olmak.
 - **Open Closed**: Gelişme açık - değişime kapalı.
 - **Liskov Substitution Principle**: Alt sınıflardan oluşan nesnelerin üst sınıfın nesneleri ile yer değiştirdikleri zaman, aynı davranışı sergilemesi.
@@ -28,7 +28,7 @@ Bilinmesi Gerekenler:
 - **ConcreteClass**: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
 
 
-Design Patterns Projeleri
+**Design Patterns Project**
 - **Strategy Pattern (WebApp.Strategy)**: Giriş yapan üyenin çalışma esnasında(runtime) CRUD işlemlerin gerçekleştiği Database seçme ve güncellemesini sağlar.
 - **Template Pattern (WebApp.Template)**: Giriş yapan üyenin tipine göre diğer kullanıcıların bilgilerinin görme yetkisi sağlar.
 - **Command Pattern (WebApp.Command)**: Ürün listesini sıra ile "Excel" ve "Pdf" dosyası türüne çevirir.
