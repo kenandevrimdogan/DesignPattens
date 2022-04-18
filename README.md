@@ -8,6 +8,7 @@
 - **Chain Of Responsibility Pattern**: Bir birini takip eden algoritmaları handler ederek sırayla gerçekleştirir.
 
 **Structural Design Patterns**: Yapının esnekliği ve verimliliğini bozmadan nesneler ve sınıfların daha büyük yapılar oluşturmak için nasıl bir araya getirilmesini sağlar.
+- **Composite Pattern**:
 
 **Bilinmesi Gerekenler**:
 - **Single Responsibility**: Tek sorumluluğa sahip olmak.
