@@ -35,7 +35,7 @@
 - **Command Pattern (WebApp.Command)**: Ürün listesini sıra ile "Excel" ve "Pdf" dosyası türüne çevirir.
 - **Observer Pattern (WebApp.Observer)**: Üye olan kullanıcıya console kısmına log, indirim ve hoşgeldiniz e-postası atar.
 - **Chain Of Responsibility Pattern (WebApp.ChainOfResponsibility)**: Önce excel dosyası haline getirilen ürünler ardından zip yapılıp, e-posta olarak gönderilir.
-
+- **Composite Pattern (WebApp.Composite)**:
 ---------------------------------------------------------
 
 - Kaynaklar
