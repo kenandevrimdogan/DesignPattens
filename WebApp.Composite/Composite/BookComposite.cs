@@ -10,12 +10,14 @@ namespace WebApp.Composite.Composite
 
         public string Name { get; set; }
 
-        private List<IComponent> _components;
+        public List<IComponent> _components;
 
         public BookComposite(int id, string name)
         {
             Id = id;
             Name = name;
+
+            _components = new List<IComponent>();
         }
 
         public int Count()
@@ -27,16 +29,14 @@ namespace WebApp.Composite.Composite
         {
             var sb = new StringBuilder();
 
-            sb.Append($@"<div class='text-primary my-1'>
-                            <a href='#' class='menu'>{Name} ({Count()})</a>
-                        </div>");
+            sb.Append($"<div class='text-primary ml-1'><a href='#' class='menu'>{Name} ({Count()})</a></div>");
 
             if (!_components.Any())
             {
                 return sb.ToString();
             }
 
-            sb.Append($@"<ul class='list-group list-group-flush ml-3'>");
+            sb.Append($"<ul class='list-group list-group-flush ms-3'>");
 
             foreach (var item in _components)
             {
