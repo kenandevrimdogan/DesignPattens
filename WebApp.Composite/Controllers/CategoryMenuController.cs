@@ -24,10 +24,12 @@ namespace WebApp.Composite.Controllers
             var userId = User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
             var categories = await _appIdentityDbContext.Categories.Include(x => x.Books).Where(x => x.UserId == userId).OrderBy(x => x.Id).ToListAsync();
 
-            
+
             var menu = GetMenus(categories, new Category { Id = 0, Name = "Top Category" }, new BookComposite(0, "Top Menu"));
 
             ViewBag.menu = menu;
+
+            ViewBag.selectList = menu._components.SelectMany(x => ((BookComposite)x).GetSelectListItems(""));
 
             return View();
         }
@@ -35,7 +37,8 @@ namespace WebApp.Composite.Controllers
 
         public BookComposite GetMenus(List<Category> categories, Category topCategory, BookComposite topBookComposite, BookComposite last = null)
         {
-            categories.Where(x => x.ReferenceId == topCategory.Id).ToList().ForEach(categoryItem => {
+            categories.Where(x => x.ReferenceId == topCategory.Id).ToList().ForEach(categoryItem =>
+            {
                 var bookComposite = new BookComposite(categoryItem.Id, categoryItem.Name);
 
                 categoryItem.Books.ToList().ForEach(bookItem =>
@@ -43,7 +46,7 @@ namespace WebApp.Composite.Controllers
                     bookComposite.Add(new BookComponent(bookItem.Id, bookItem.Name));
                 });
 
-                if(last != null)
+                if (last != null)
                 {
                     last.Add(bookComposite);
                 }

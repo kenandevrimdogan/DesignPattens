@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -56,6 +57,33 @@ namespace WebApp.Composite.Composite
         public void Remove(IComponent component)
         {
             _components.Remove(component);
+        }
+
+        public List<SelectListItem> GetSelectListItems(string line)
+        {
+            List<SelectListItem> list = new List<SelectListItem>
+            {
+                new SelectListItem
+                {
+                    Text = $"{line}{Name}",
+                    Value = Id.ToString()
+                }
+            };
+
+            if (_components.Any(x => x is BookComposite))
+            {
+                line += " - ";
+            }
+
+            _components.ForEach(x =>
+            {
+                if (x is BookComposite bookComposite)
+                {
+                    list.AddRange(bookComposite.GetSelectListItems(line));
+                }
+            });
+
+            return list;
         }
     }
 }
