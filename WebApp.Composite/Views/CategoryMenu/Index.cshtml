@@ -5,11 +5,25 @@
     var menu = ViewBag.menu as BookComposite;
 }
 
+@section Scripts {
+<script>
+    $(document).ready(function(){
+        $('ul').hide();
+
+        $('.menu').click(function(e){
+            e.preventDefault();
+
+            $(this).parent().next().toggle();
+        });
+    });
+</script>
+}
+
 <form asp-controller="CategoryMenu" asp-action="Index" method="post">
     <select name="categoryId" asp-items="@ViewBag.selectList"></select>
-    <input type="text" name="BookName"/>
+    <input type="text" name="BookName" />
 
-    <input type="submit" value="Save"/>
+    <input type="submit" value="Save" />
 </form>
 
 
@@ -21,7 +35,7 @@
             </div>
 
             <div class="card-body">
-                @foreach(var item in menu._components)
+                @foreach (var item in menu._components)
                 {
                     @Html.Raw(item.Display())
                 }
