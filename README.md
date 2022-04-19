@@ -8,7 +8,7 @@
 - **Chain Of Responsibility Pattern**: Bir birini takip eden algoritmaları handler ederek sırayla gerçekleştirir.
 
 **Structural Design Patterns**: Yapının esnekliği ve verimliliğini bozmadan nesneler ve sınıfların daha büyük yapılar oluşturmak için nasıl bir araya getirilmesini sağlar.
-- **Composite Pattern**:
+- **Composite Pattern**: Hiyeraşik yapıyıyı algoritması içine alarak kodu daha verimliği kullanmayı ve sonsuz ilişki kurmasını sağlar.
 
 **Bilinmesi Gerekenler**:
 - **Single Responsibility**: Tek sorumluluğa sahip olmak.
@@ -24,6 +24,7 @@
 - **Immobility**: Geliştirilen modüllerin tekrar kullanıma uygun olmaması.
 - **Fragility**: Yapılacak olan bir değişikliğin, başka kısımları etkilemesi.
 - **Extendability**: Esneklik.
+- **Recursive**: Kendi kendini çağıran fonksiyon. İç içe olan durumlar için kullanılır.  
 
 - **AbstractClass**: Şablon algoritmanın tanımlanacağı soyut sınıf.
 - **ConcreteClass**: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
