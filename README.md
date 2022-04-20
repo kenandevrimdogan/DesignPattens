@@ -9,6 +9,7 @@
 
 **Structural Design Patterns**: Yapının esnekliği ve verimliliğini bozmadan nesneler ve sınıfların daha büyük yapılar oluşturmak için nasıl bir araya getirilmesini sağlar.
 - **Composite Pattern**: Hiyeraşik yapıyıyı algoritması içine alarak kodu daha verimliği kullanmayı ve sonsuz ilişki kurmasını sağlar.
+- **Decorator Pattern**: Var olan bir objenin yapısını bozmadan genişletmek ve yeni özellikler kazandırmayı sağlar.
 
 **Bilinmesi Gerekenler**:
 - **Single Responsibility**: Tek sorumluluğa sahip olmak.
@@ -37,6 +38,7 @@
 - **Observer Pattern (WebApp.Observer)**: Üye olan kullanıcıya console kısmına log, indirim ve hoşgeldiniz e-postası atar.
 - **Chain Of Responsibility Pattern (WebApp.ChainOfResponsibility)**: Önce excel dosyası haline getirilen ürünler ardından zip yapılıp, e-posta olarak gönderilir.
 - **Composite Pattern (WebApp.Composite)**: Kitapları ve kategoriyi hiyeraşik şekilde listelemeyi ve düzenlemeyi sağlar.
+- **Decorator Pattern (WebApp.Decorator)**: Ürün listesini listelerken hem cache hem loglama yapılır product repository bozmadan.
 ---------------------------------------------------------
 
 - Kaynaklar
