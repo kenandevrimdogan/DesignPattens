@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebApp.Decorator.Decorator;
 using WebApp.Decorator.Repositories;
 
 namespace BasePoject
@@ -22,7 +24,19 @@ namespace BasePoject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddMemoryCache();
+            services.AddScoped<IProductRepository>(serviceProvider =>
+            {
+                var context = serviceProvider.GetRequiredService<AppIdentityDbContext>();
+                var memoryCache = serviceProvider.GetRequiredService<IMemoryCache>();
+
+                var productRepository = new ProductRepository(context);
+
+                var cacheDecorator = new ProductRepositoryCacheDecorator(productRepository, memoryCache);
+
+                return cacheDecorator;
+            });
+
 
             services.AddDbContext<AppIdentityDbContext>(options =>
             {
