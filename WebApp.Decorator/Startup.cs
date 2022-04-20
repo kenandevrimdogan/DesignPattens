@@ -29,19 +29,24 @@ namespace BasePoject
             services.AddMemoryCache();
             services.AddLogging();
 
-            services.AddScoped<IProductRepository>(serviceProvider =>
-            {
-                var context = serviceProvider.GetRequiredService<AppIdentityDbContext>();
-                var memoryCache = serviceProvider.GetRequiredService<IMemoryCache>();
-                var logService = serviceProvider.GetRequiredService<ILogger<ProductRepositoryLoggingDecorator>>();
+            services.AddScoped<IProductRepository, ProductRepository>()
+                .Decorate<IProductRepository, ProductRepositoryCacheDecorator>()
+                .Decorate<IProductRepository, ProductRepositoryLoggingDecorator>();
 
-                var productRepository = new ProductRepository(context);
+            // The First 
+            //services.AddScoped<IProductRepository>(serviceProvider =>
+            //{
+            //    var context = serviceProvider.GetRequiredService<AppIdentityDbContext>();
+            //    var memoryCache = serviceProvider.GetRequiredService<IMemoryCache>();
+            //    var logService = serviceProvider.GetRequiredService<ILogger<ProductRepositoryLoggingDecorator>>();
 
-                var cacheDecorator = new ProductRepositoryCacheDecorator(productRepository, memoryCache);
-                var logDecorator = new ProductRepositoryLoggingDecorator(productRepository, logService);
+            //    var productRepository = new ProductRepository(context);
 
-                return logDecorator;
-            });
+            //    var cacheDecorator = new ProductRepositoryCacheDecorator(productRepository, memoryCache);
+            //    var logDecorator = new ProductRepositoryLoggingDecorator(productRepository, logService);
+
+            //    return logDecorator;
+            //});
 
 
             services.AddDbContext<AppIdentityDbContext>(options =>
