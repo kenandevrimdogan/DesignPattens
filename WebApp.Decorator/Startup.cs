@@ -1,6 +1,7 @@
 using BasePoject.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
@@ -28,10 +29,7 @@ namespace BasePoject
         {
             services.AddMemoryCache();
             services.AddLogging();
-
-            services.AddScoped<IProductRepository, ProductRepository>()
-                .Decorate<IProductRepository, ProductRepositoryCacheDecorator>()
-                .Decorate<IProductRepository, ProductRepositoryLoggingDecorator>();
+            services.AddHttpContextAccessor();
 
             // The First 
             //services.AddScoped<IProductRepository>(serviceProvider =>
@@ -47,6 +45,34 @@ namespace BasePoject
 
             //    return logDecorator;
             //});
+
+            // The seond
+            //services.AddScoped<IProductRepository, ProductRepository>()
+            //    .Decorate<IProductRepository, ProductRepositoryCacheDecorator>()
+            //    .Decorate<IProductRepository, ProductRepositoryLoggingDecorator>();
+
+            // The Third
+            services.AddScoped<IProductRepository>(serviceProvider =>
+            {
+                var httpContextAccessor = serviceProvider.GetRequiredService<IHttpContextAccessor>();
+                var context = serviceProvider.GetRequiredService<AppIdentityDbContext>();
+                var memoryCache = serviceProvider.GetRequiredService<IMemoryCache>();
+                var logService = serviceProvider.GetRequiredService<ILogger<ProductRepositoryLoggingDecorator>>();
+                var productRepository = new ProductRepository(context);
+
+                if (httpContextAccessor.HttpContext.User.Identity.Name == "user1")
+                {
+                    var cacheDecorator = new ProductRepositoryCacheDecorator(productRepository, memoryCache);
+                    return cacheDecorator;
+                }
+                else if (httpContextAccessor.HttpContext.User.Identity.Name == "user2")
+                {
+                    var logDecorator = new ProductRepositoryLoggingDecorator(productRepository, logService);
+                    return logDecorator;
+                }
+
+                return productRepository;
+            });
 
 
             services.AddDbContext<AppIdentityDbContext>(options =>
