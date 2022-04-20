@@ -2,11 +2,13 @@ using BasePoject.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using WebApp.Decorator.Decorator;
 using WebApp.Decorator.Repositories;
 
@@ -25,16 +27,20 @@ namespace BasePoject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
+            services.AddLogging();
+
             services.AddScoped<IProductRepository>(serviceProvider =>
             {
                 var context = serviceProvider.GetRequiredService<AppIdentityDbContext>();
                 var memoryCache = serviceProvider.GetRequiredService<IMemoryCache>();
+                var logService = serviceProvider.GetRequiredService<ILogger<ProductRepositoryLoggingDecorator>>();
 
                 var productRepository = new ProductRepository(context);
 
                 var cacheDecorator = new ProductRepositoryCacheDecorator(productRepository, memoryCache);
+                var logDecorator = new ProductRepositoryLoggingDecorator(productRepository, logService);
 
-                return cacheDecorator;
+                return logDecorator;
             });
 
 
