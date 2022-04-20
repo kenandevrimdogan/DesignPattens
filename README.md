@@ -8,7 +8,7 @@
 - **Chain Of Responsibility Pattern**: Bir birini takip eden algoritmaları handler ederek sırayla gerçekleştirir.
 
 **Structural Design Patterns**: Yapının esnekliği ve verimliliğini bozmadan nesneler ve sınıfların daha büyük yapılar oluşturmak için nasıl bir araya getirilmesini sağlar.
-- **Composite Pattern**:
+- **Composite Pattern**: Hiyeraşik yapıyıyı algoritması içine alarak kodu daha verimliği kullanmayı ve sonsuz ilişki kurmasını sağlar.
 
 **Bilinmesi Gerekenler**:
 - **Single Responsibility**: Tek sorumluluğa sahip olmak.
@@ -24,6 +24,7 @@
 - **Immobility**: Geliştirilen modüllerin tekrar kullanıma uygun olmaması.
 - **Fragility**: Yapılacak olan bir değişikliğin, başka kısımları etkilemesi.
 - **Extendability**: Esneklik.
+- **Recursive**: Kendi kendini çağıran fonksiyon. İç içe olan durumlar için kullanılır.  
 
 - **AbstractClass**: Şablon algoritmanın tanımlanacağı soyut sınıf.
 - **ConcreteClass**: Şablon algoritmanın adımlarını gerçekleştirecek olan gerçek sınıf.
@@ -35,7 +36,7 @@
 - **Command Pattern (WebApp.Command)**: Ürün listesini sıra ile "Excel" ve "Pdf" dosyası türüne çevirir.
 - **Observer Pattern (WebApp.Observer)**: Üye olan kullanıcıya console kısmına log, indirim ve hoşgeldiniz e-postası atar.
 - **Chain Of Responsibility Pattern (WebApp.ChainOfResponsibility)**: Önce excel dosyası haline getirilen ürünler ardından zip yapılıp, e-posta olarak gönderilir.
-- **Composite Pattern (WebApp.Composite)**:
+- **Composite Pattern (WebApp.Composite)**: Kitapları ve kategoriyi hiyeraşik şekilde listelemeyi ve düzenlemeyi sağlar.
 ---------------------------------------------------------
 
 - Kaynaklar
